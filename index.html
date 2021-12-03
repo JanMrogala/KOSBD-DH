@@ -21,13 +21,30 @@
 
 </head>
 
-<body>
+<body class="blue-grey">
 
     <div class="container">
-        <p>aaa</p>
+
+        <div class="row valign-wrapper">
+            <div class="col s1 offset-s5">
+                <button class="btn waves-effect waves-light blue-grey darken-3 center-align" id="submitN" type="submit" name="action">Submit
+                </button>
+            </div>
+            <div class="input-field col s1">
+                <input value="" id="numberN" type="text" class="validate">
+                <label class="active" for="numberN">Number N</label>
+            </div>
+            <div class="col s6"></div>
+        </div>
+
+    </div>
+
+    <div class="center-align">
+        <p id="nOutput"></p>
     </div>
 
     <script src="libs/materialize/js/materialize.min.js"></script>
+    <script src="js/primitiveRoot.js"></script>
     <script src="js/indexPageScripts.js"></script>
 
 </body>
