@@ -31,7 +31,7 @@
                 <p class="center-align full-stretch-w"><b>Alice</b></p>
             </div>
             <!-- Public header -->
-            <div class="col s6 full-stretch-h valign-wrapper grey lighten-3">
+            <div class="col s6 full-stretch-h valign-wrapper grey lighten-2">
                 <p class="center-align full-stretch-w"><b>Public</b></p>
             </div>
             <!-- Bob header -->
@@ -54,51 +54,106 @@
                         <input type="text" class="browser-default" id="secretKeyA" name="secretKeyA" minlength="1" maxlength="6" size="3">
                     </div>
                 </div>
+                <div class="row" style="margin-top: 200px;">
+                    <div class="col s12">
+                        <p class="center-align"><b>A = g<sup>a</sup> mod p</b></p>
+                        <p class="center-align"><b>A = <b id="AResultAlice">90</b></b></p>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 120px;">
+                    <div class="col s12">
+                        <p class="center-align">Common secret</p>
+                        <p class="center-align"><b>s = B<sup>a</sup> mod p</b></p>
+                        <p class="center-align"><b>s = <b id="sResultAlice">90</b></b></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                Message:
+                                <textarea id="textarea1" class="browser-default"></textarea>
+                                <a class="waves-effect waves-light btn green lighten-1" id="sendMsgAlice">Send</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
             <!-- Public body -->
             <div class="col s6 white full-stretch-h">
                 <div class="row body-row">
-                    <div class="col s3 center-align">
-                        Modulus p:
-                    </div>
-                    <div class="col s3">
+                    <!-- First body row -->
+                    <div class="col s6 center-align">
+                        Mod p:
                         <input type="text" class="browser-default" id="secretKeyB" name="secretKeyB" minlength="1" maxlength="6" size="3">
                     </div>
-                    <div class="col s3 center-align">
+                    <div class="col s6 center-align">
                         Base g:
-                    </div>
-                    <div class="col s3">
                         <input type="text" class="browser-default" id="secretKeyB" name="secretKeyB" minlength="1" maxlength="6" size="3">
                     </div>
+                    <!-- Second body row -->
                     <!-- Random value collapsible for p -->
-                    <div class="col s3 offset-s3 max-content-h">
+                    <div class="col s4 offset-s2 max-content-h">
+
                         <ul class="collapsible">
                             <li>
                                 <div class="collapsible-header no-select">Random value</div>
                                 <div class="collapsible-body left-align">
                                     length:
-                                    <input type="text" class="browser-default" id="randomLenP" name="randomLenP" minlength="1" maxlength="6" size="3">
+                                    <input type="text" class="browser-default" id="randomLenP" name="randomLenP" minlength="1" maxlength="6" size="3"><br>
                                     <a class="waves-effect waves-light btn green lighten-1" style="margin-top: 5px">Randomise</a>
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <!-- Random value collapsible for g -->
-                    <div class="col s3 offset-s3">
+                    <div class="col s4 offset-s2 max-content-h">
+
                         <ul class="collapsible">
                             <li>
                                 <div class="collapsible-header no-select">Random value</div>
                                 <div class="collapsible-body left-align">
                                     length:
-                                    <input type="text" class="browser-default" id="randomLenG" name="randomLenG" minlength="1" maxlength="6" size="3">
+                                    <input type="text" class="browser-default" id="randomLenG" name="randomLenG" minlength="1" maxlength="6" size="3"><br>
                                     <a class="waves-effect waves-light btn green lighten-1" style="margin-top: 5px">Randomise</a>
                                 </div>
                             </li>
                         </ul>
+
                     </div>
                     <!-- Next step button 1 -->
                     <div class="col s12 center-align">
-                        <a class="waves-effect waves-light btn-large blue">Next step ➔</a>
+                        <a class="waves-effect waves-light btn blue lighten-1" id="continueBtn1">Next step ➔</a>
+                    </div>
+                </div>
+                <!-- Send A and B through public space row -->
+                <div class="row" style="margin-top: 80px;">
+                    <div class="col s6 center-align">
+                        <b>A</b> 🡆 🡆 🡆
+                    </div>
+                    <div class="col s6 center-align">
+                        🡄 🡄 🡄 <b>B</b>
+                    </div>
+                </div>
+                <!-- Next step button 2 -->
+                <div class="row" style="margin-top: 80px;">
+                    <div class="col s12 center-align">
+                        <a class="waves-effect waves-light btn blue lighten-1" id="continueBtn2">Next step ➔</a>
+                    </div>
+                </div>
+                <!-- Next step button 3 -->
+                <div class="row" style="margin-top: 180px;">
+                    <div class="col s12 center-align">
+                        <a class="waves-effect waves-light btn blue lighten-1" id="continueBtn2">Next step ➔</a>
+                    </div>
+                </div>
+                <!-- Send A and B through public space row -->
+                <div class="row" style="margin-top: 80px;">
+                    <div class="col s6 center-align">
+                        <b>Encrypted message</b> 🡆 🡆 🡆
+                    </div>
+                    <div class="col s6 center-align">
+                        🡄 🡄 🡄 <b>Encrypted message</b>
                     </div>
                 </div>
             </div>
@@ -111,6 +166,19 @@
                     </div>
                     <div class="col s6">
                         <input type="text" class="browser-default" id="secretKeyB" name="secretKeyB" minlength="1" maxlength="6" size="3">
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 200px;">
+                    <div class="col s12">
+                        <p class="center-align"><b>B = g<sup>b</sup> mod p</b></p>
+                        <p class="center-align"><b>B = <b id="BResultBob">50</b></b></p>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 120px;">
+                    <div class="col s12">
+                        <p class="center-align">Common secret</p>
+                        <p class="center-align"><b>s = A<sup>b</sup> mod p</b></p>
+                        <p class="center-align"><b>s = <b id="sResultBob">90</b></b></p>
                     </div>
                 </div>
             </div>

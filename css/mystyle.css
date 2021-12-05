@@ -28,7 +28,7 @@ html {
 
 .collapsible {
     width: fit-content;
-    height: fit-content;
+    
 }
 
 .collapsible-header {
@@ -41,10 +41,19 @@ html {
 
 .collapsible-body {
     padding: 5px;
+    width: fit-content;
+}
+
+#textarea1 {
+    max-width: 99.9%;
+    max-height: 200px;
+    min-width: fit-content;
+    min-height: 100px;
 }
 
 #mainContainer {
     border-radius: 40px 40px 0px 0px;
+    min-height: 100%
 }
 
 #header-row {
