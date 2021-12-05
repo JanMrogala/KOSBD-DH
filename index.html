@@ -14,37 +14,135 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico" />
     <link rel="stylesheet" href="libs/materialize/css/materialize.min.css">
-
-    <link href="css/mystyle.css" rel="stylesheet">
-
     <script src="libs/jquery/jquery-3.6.0.min.js"></script>
+    <script src="libs/materialize/js/materialize.min.js"></script>
+    <link href="css/mystyle.css" rel="stylesheet">
 
 </head>
 
-<body class="blue-grey">
+<body>
 
-    <div class="container">
+    <div class="container max-h" id="mainContainer">
 
-        <div class="row valign-wrapper">
-            <div class="col s1 offset-s5">
-                <button class="btn waves-effect waves-light blue-grey darken-3 center-align" id="submitN" type="submit" name="action">Submit
-                </button>
+        <!-- The header for Alice, Public and Bob -->
+        <div class="row no-margin" id="header-row">
+            <!-- Alice header -->
+            <div class="col s3 full-stretch-h valign-wrapper blue-grey lighten-1" id="aliceTitle">
+                <p class="center-align full-stretch-w"><b>Alice</b></p>
             </div>
-            <div class="input-field col s1">
-                <input value="" id="numberN" type="text" class="validate">
-                <label class="active" for="numberN">Number N</label>
+            <!-- Public header -->
+            <div class="col s6 full-stretch-h valign-wrapper grey lighten-3">
+                <p class="center-align full-stretch-w"><b>Public</b></p>
             </div>
-            <div class="col s6"></div>
+            <!-- Bob header -->
+            <div class="col s3 full-stretch-h valign-wrapper brown lighten-1" id="bobTitle">
+                <p class="center-align full-stretch-w"><b>Bob</b></p>
+            </div>
+        </div>
+
+
+        <!-- The body for Alice, Public and Bob -->
+        <div class="row no-margin" id="main-row">
+            <!-- Alice body -->
+            <div class="col s3 blue-grey lighten-2 full-stretch-h">
+                <!-- Private key a -->
+                <div class="row body-row">
+                    <div class="col s6 center-align">
+                        Secret key a:
+                    </div>
+                    <div class="col s6">
+                        <input type="text" class="browser-default" id="secretKeyA" name="secretKeyA" minlength="1" maxlength="6" size="3">
+                    </div>
+                </div>
+            </div>
+            <!-- Public body -->
+            <div class="col s6 white full-stretch-h">
+                <div class="row body-row">
+                    <div class="col s3 center-align">
+                        Modulus p:
+                    </div>
+                    <div class="col s3">
+                        <input type="text" class="browser-default" id="secretKeyB" name="secretKeyB" minlength="1" maxlength="6" size="3">
+                    </div>
+                    <div class="col s3 center-align">
+                        Base g:
+                    </div>
+                    <div class="col s3">
+                        <input type="text" class="browser-default" id="secretKeyB" name="secretKeyB" minlength="1" maxlength="6" size="3">
+                    </div>
+                    <!-- Random value collapsible for p -->
+                    <div class="col s3 offset-s3 max-content-h">
+                        <ul class="collapsible">
+                            <li>
+                                <div class="collapsible-header no-select">Random value</div>
+                                <div class="collapsible-body left-align">
+                                    length:
+                                    <input type="text" class="browser-default" id="randomLenP" name="randomLenP" minlength="1" maxlength="6" size="3">
+                                    <a class="waves-effect waves-light btn green lighten-1" style="margin-top: 5px">Randomise</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Random value collapsible for g -->
+                    <div class="col s3 offset-s3">
+                        <ul class="collapsible">
+                            <li>
+                                <div class="collapsible-header no-select">Random value</div>
+                                <div class="collapsible-body left-align">
+                                    length:
+                                    <input type="text" class="browser-default" id="randomLenG" name="randomLenG" minlength="1" maxlength="6" size="3">
+                                    <a class="waves-effect waves-light btn green lighten-1" style="margin-top: 5px">Randomise</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Next step button 1 -->
+                    <div class="col s12 center-align">
+                        <a class="waves-effect waves-light btn-large blue">Next step ➔</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Bob body -->
+            <div class="col s3 brown lighten-2 full-stretch-h">
+                <!-- Private key b -->
+                <div class="row body-row">
+                    <div class="col s6 center-align">
+                        Secret key b:
+                    </div>
+                    <div class="col s6">
+                        <input type="text" class="browser-default" id="secretKeyB" name="secretKeyB" minlength="1" maxlength="6" size="3">
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
 
-    <div class="center-align">
-        <p id="nOutput"></p>
-    </div>
-
-    <script src="libs/materialize/js/materialize.min.js"></script>
-    <script src="js/primitiveRoot.js"></script>
+    <script src="js/primeNumbers.js"></script>
     <script src="js/indexPageScripts.js"></script>
 
 </body>
+<!-- <div class="row">
+
+    <div class="col s3">
+        <div class="center-align">
+            a:
+            <input type="text" pattern="[0-9]{9}" class="browser-default" id="secretKey" name="secretKey" required minlength="1" maxlength="6" size="3">
+        </div>
+    </div>
+    <div class="col s6">
+        <div class="center-align">
+            p:
+            <input type="text" pattern="[0-9]{9}" class="browser-default" id="secretKey" name="secretKey" required minlength="1" maxlength="6" size="3">
+            g:
+            <input type="text" pattern="[0-9]{9}" class="browser-default" id="secretKey" name="secretKey" required minlength="1" maxlength="6" size="3">
+        </div>
+    </div>
+    <div class="col s3">
+        <div class="center-align">
+            b:
+            <input type="text" pattern="[0-9]{9}" class="browser-default" id="secretKey" name="secretKey" required minlength="1" maxlength="6" size="3">
+        </div>
+    </div>
+
+</div> -->

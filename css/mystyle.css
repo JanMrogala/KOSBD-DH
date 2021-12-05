@@ -1,0 +1,65 @@
+html {
+    background-image: url("../resources/images/bg.jpg");
+}
+
+.max-w {
+    width: 100vw;
+}
+
+.max-h {
+    height: 100vh;
+}
+
+.full-stretch-w {
+    width: 100%;
+}
+
+.full-stretch-h {
+    height: 100%;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.body-row {
+    margin-top: 10px;
+}
+
+.collapsible {
+    width: fit-content;
+    height: fit-content;
+}
+
+.collapsible-header {
+    padding: 5px;
+}
+
+.max-content-h {
+    height: 140px;
+}
+
+.collapsible-body {
+    padding: 5px;
+}
+
+#mainContainer {
+    border-radius: 40px 40px 0px 0px;
+}
+
+#header-row {
+    height: 10%;
+    border-radius: 40px 40px;
+}
+
+#main-row {
+    height: 90%;
+}
+
+#aliceTitle {
+    border-radius: 40px 0px 0px 0px;
+}
+
+#bobTitle {
+    border-radius: 0px 40px 0px 0px;
+}
