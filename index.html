@@ -22,7 +22,7 @@
 
 <body>
 
-    <div class="container max-h" id="mainContainer">
+    <div class="container full-stretch-h white" id="mainContainer">
 
         <!-- The header for Alice, Public and Bob -->
         <div class="row no-margin" id="header-row">
@@ -54,29 +54,42 @@
                         <input type="text" class="browser-default" id="secretKeyA" name="secretKeyA" minlength="1" maxlength="6" size="3">
                     </div>
                 </div>
+                <!-- public key -->
                 <div class="row" style="margin-top: 200px;">
                     <div class="col s12">
-                        <p class="center-align"><b>A = g<sup>a</sup> mod p</b></p>
-                        <p class="center-align"><b>A = <b id="AResultAlice">90</b></b></p>
+                        <p class="center-align"><b>Public key</b></p>
+                        <p class="center-align">A = g<sup>a</sup> mod p</p>
+                        <p class="center-align" id="AResultAlice">A = 90</p>
                     </div>
                 </div>
+                <!-- common secret -->
                 <div class="row" style="margin-top: 120px;">
                     <div class="col s12">
-                        <p class="center-align">Common secret</p>
-                        <p class="center-align"><b>s = B<sup>a</sup> mod p</b></p>
-                        <p class="center-align"><b>s = <b id="sResultAlice">90</b></b></p>
+                        <p class="center-align"><b>Common secret</b></p>
+                        <p class="center-align">s = B<sup>a</sup> mod p</p>
+                        <p class="center-align" id="sResultAlice">s = 90</p>
                     </div>
                 </div>
+                <!-- message input -->
                 <div class="row">
                     <form class="col s12">
                         <div class="row">
                             <div class="input-field col s12">
-                                <p>Message:</p>
+                                <p><b>Message:</b></p>
                                 <div><textarea id="textarea1" class="browser-default"></textarea></div>
                                 <a class="waves-effect waves-light btn green lighten-1" id="sendMsgAlice">Send</a>
                             </div>
                         </div>
                     </form>
+                </div>
+                <!-- received message -->
+                <div class="row">
+                    <div class="cos s12" style="height: 100%;">
+                        <div style="padding: 10px;">
+                            <p><b>Received message:</b></p>
+                            <p id="receivedMsgAlice">...</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Public body -->
@@ -129,10 +142,10 @@
                 <!-- Send A and B through public space row -->
                 <div class="row" style="margin-top: 80px;">
                     <div class="col s6 center-align">
-                        <b>A</b> 🡆 🡆 🡆
+                        A 🡆 🡆 🡆
                     </div>
                     <div class="col s6 center-align">
-                        🡄 🡄 🡄 <b>B</b>
+                        🡄 🡄 🡄 B
                     </div>
                 </div>
                 <!-- Next step button 2 -->
@@ -150,10 +163,10 @@
                 <!-- Send A and B through public space row -->
                 <div class="row" style="margin-top: 80px;">
                     <div class="col s6 center-align">
-                        <b>Encrypted message</b> 🡆 🡆 🡆
+                        Encrypted message 🡆 🡆 🡆
                     </div>
                     <div class="col s6 center-align">
-                        🡄 🡄 🡄 <b>Encrypted message</b>
+                        🡄 🡄 🡄 Encrypted message
                     </div>
                 </div>
             </div>
@@ -168,17 +181,42 @@
                         <input type="text" class="browser-default" id="secretKeyB" name="secretKeyB" minlength="1" maxlength="6" size="3">
                     </div>
                 </div>
+                <!-- public key -->
                 <div class="row" style="margin-top: 200px;">
                     <div class="col s12">
-                        <p class="center-align"><b>B = g<sup>b</sup> mod p</b></p>
-                        <p class="center-align"><b>B = <b id="BResultBob">50</b></b></p>
+                        <p class="center-align"><b>Public key</b></p>
+                        <p class="center-align">A = g<sup>b</sup> mod p</p>
+                        <p class="center-align" id="BResultBob">A = 50</p>
+
                     </div>
                 </div>
+                <!-- common secret -->
                 <div class="row" style="margin-top: 120px;">
                     <div class="col s12">
-                        <p class="center-align">Common secret</p>
-                        <p class="center-align"><b>s = A<sup>b</sup> mod p</b></p>
-                        <p class="center-align"><b>s = <b id="sResultBob">90</b></b></p>
+                        <p class="center-align"><b>Common secret</b></p>
+                        <p class="center-align">s = A<sup>b</sup> mod p</p>
+                        <p class="center-align" id="sResultBob">s = 90</p>
+                    </div>
+                </div>
+                <!-- message input -->
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <p><b>Message:</b></p>
+                                <div><textarea id="textarea1" class="browser-default"></textarea></div>
+                                <a class="waves-effect waves-light btn green lighten-1" id="sendMsgAlice">Send</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- received message -->
+                <div class="row">
+                    <div class="cos s12" style="height: 400px;">
+                        <div style="padding: 10px;">
+                            <p><b>Received message:</b></p>
+                            <p id="receivedMsgBob">...</p>
+                        </div>
                     </div>
                 </div>
             </div>

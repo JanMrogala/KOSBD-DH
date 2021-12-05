@@ -1,3 +1,10 @@
+html, body
+{
+    position: relative;
+  height: auto;
+  min-height: 100% !important;
+}
+
 html {
     background-image: url("../resources/images/bg.jpg");
 }
@@ -48,21 +55,21 @@ html {
     max-width: 99.9%;
     max-height: 200px;
     min-width: fit-content;
-    min-height: 100px;
+    min-height: 50px;
 }
 
 #mainContainer {
     border-radius: 40px 40px 0px 0px;
-    min-height: 100%
+    min-height: 100%;
 }
 
 #header-row {
-    height: 10%;
+    height: 80px;
     border-radius: 40px 40px;
 }
 
 #main-row {
-    height: 90%;
+    height: 1400px;
 }
 
 #aliceTitle {
