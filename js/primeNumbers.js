@@ -95,6 +95,43 @@ function findPrimitive(n) {
   return -1;
 }
 
+function isPrimitive(n, m) {
+  let s = new Set();
+
+  // Check if n is prime or not
+  if (isPrime(n) == false) return false;
+
+  // Find value of Euler Totient function of n
+  // Since n is a prime number, the value of Euler
+  // Totient function is n-1 as there are n-1
+  // relatively prime numbers.
+  let phi = n - 1;
+
+  // Find prime factors of phi and store in a set
+  findPrimefactors(s, phi);
+
+  // Check for every number from 2 to phi
+  for (let r = 2; r <= phi; r++) {
+    // Iterate through all prime factors of phi.
+    // and check if we found a power with value 1
+    let flag = false;
+    for (let it of s) {
+      // Check if r^((phi)/primefactors) mod n
+      // is 1 or not
+      if (power(r, phi / it, n) == 1) {
+        flag = true;
+        break;
+      }
+    }
+
+    // If there was no power with value 1.
+    if (flag == false && r == m) return true;
+  }
+
+  // If no primitive root found
+  return false;
+}
+
 function isPrime(num) {
   for (let i = 2; i * i <= num; i++) if (num % i === 0) return false;
   return num > 1;
