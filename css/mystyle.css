@@ -51,7 +51,7 @@ html {
     width: fit-content;
 }
 
-#textarea1 {
+#textarea1, #textarea2, #decodedMsgBob, #decodedMsgAlice {
     max-width: 99.9%;
     max-height: 200px;
     min-width: fit-content;
