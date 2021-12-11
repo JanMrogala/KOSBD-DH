@@ -69,7 +69,9 @@ html {
 }
 
 #main-row {
-    height: 1400px;
+    height: 1800px;
+    min-height: 1800px;
+    max-height: fit-content;
 }
 
 #aliceTitle {
